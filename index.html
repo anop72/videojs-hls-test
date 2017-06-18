@@ -22,6 +22,27 @@
 
 <script>
   var player = videojs('example-video');
+
+  var previousTime = 0;
+  var currentTime = 0;
+  var seekStart = null;
+
+  player.on('timeupdate', function() {
+      previousTime = currentTime;
+      currentTime = player.currentTime();
+
+      // TODO do something here ...
+  });
+  player.on('seeking', function() {
+      if(seekStart === null)
+        seekStart = previousTime;
+
+  });
+  player.on('seeked', function() {
+      console.log('seeked from', seekStart, 'to', currentTime, '; delta:', currentTime - previousTime);
+      seekStart = null;
+  });
+
   player.play();
 </script>
 
