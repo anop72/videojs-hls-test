@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+  <title>hls</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/video.js/6.2.0/alt/video-js-cdn.min.css" />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/video.js/6.2.0/video.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-hls/5.5.3/videojs-contrib-hls.min.js"></script>
+
+</head>
+<body>
+
+<video id=example-video width=600 height=300 class="video-js vjs-default-skin" controls>
+  <source
+    src=""
+    type="application/x-mpegURL">
+</video>
+
+<script>
+  var player = videojs('example-video');
+  player.play();
+</script>
+
+</body>
+</html>
